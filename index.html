@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Manual sorting of numbers</title>
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+	<script type="text/javascript">
+		$(document).ready( function() {
+			function sort( array ) {
+				var n = array.length;
+				while ( n !== 0 ) {
+					var newn = 0;
+					for( var i = 1; i < array.length; i++ ) {
+						if( array[i] < array[i - 1] ) {
+							var save = array[i];
+							array[i] = array[i - 1];
+							array[i - 1] = save;
+							newn = i;
+						}
+					}
+					n = newn;
+				}
+				return array;
+			}
+			console.log( sort( [ 3,50,2,100 ] ) );
+		} );
+	</script>
+</head>
+<body>
+</body>
+</html>
